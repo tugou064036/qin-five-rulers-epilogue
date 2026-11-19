@@ -316,7 +316,7 @@ DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE. */
 .seal {
-  position: absolute; left: calc(50% + 3.6cqw); top: -2.45cqw;
+  position: absolute; left: calc(50% + 4.45cqw); top: -2.45cqw;
   width: 4.35cqw; height: 4.35cqw;
   display: grid; grid-template: repeat(2, 1fr) / repeat(2, 1fr);
   grid-auto-flow: column; direction: rtl; place-items: center;
@@ -327,6 +327,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE. */
   filter: drop-shadow(0 .16cqw .26cqw rgba(0, 0, 0, .6));
   opacity: 0; pointer-events: none; transform-origin: center;
 }
+/* 单独移动印章，盖印动画仍可独立控制旋转和缩放。 */
+.seal { transition: translate .6s var(--ease); }
+.stage[data-phase="finale"] .slot.is-active .seal { translate: 3cqw -.55cqw; }
 .seal b { font-weight: inherit; }
 .stage[data-phase="finale"] .seal { animation: stamp .55s var(--ease) forwards; animation-delay: calc(.5s + var(--i) * .32s); }
 @keyframes stamp {
@@ -454,7 +457,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE. */
 .stage.instant, .stage.instant * { transition: none !important; animation-duration: 0s !important; animation-delay: 0s !important; }
 @media (prefers-reduced-motion: reduce) {
   .fog { animation: none !important; }
-  .slot, .fig, .fig img, .spotlight, .headline .swap { transition-duration: .01s !important; }
+  .slot, .fig, .fig img, .seal, .spotlight, .headline .swap { transition-duration: .01s !important; }
 }
 
 /* 竖屏小屏提示 */
