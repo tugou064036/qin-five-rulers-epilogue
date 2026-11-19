@@ -402,21 +402,20 @@ OTHER DEALINGS IN THE FONT SOFTWARE. */
 .panel.clickable { cursor: pointer; }
 .panel.clickable:hover { border-color: rgba(245, 158, 11, .6); }
 .panel.speaking { border-color: rgba(217, 119, 6, .55); }
-.panel-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .24cqw 1cqw; padding-bottom: .55cqw; margin-bottom: .6cqw; border-bottom: 1px solid rgba(101, 79, 52, .36); }
-.who { display: flex; align-items: baseline; gap: max(7px, .72cqw); min-width: 0; }
+.panel-head { display: flex; align-items: center; justify-content: space-between; gap: 1cqw; padding-bottom: .55cqw; margin-bottom: .6cqw; border-bottom: 1px solid rgba(41, 37, 36, .9); }
+.who { display: flex; align-items: center; gap: .7cqw; min-width: 0; }
 .chip {
-  flex: none; font: 600 max(13px, 1.28cqw)/1.4 var(--serif);
-  letter-spacing: .1em; color: #e4c185;
+  flex: none; padding: .18cqw .62cqw; border-radius: .3cqw;
+  font-weight: 700; font-size: .98cqw; letter-spacing: .14em;
+  background: #000; color: var(--amber-300); border: 1px solid var(--amber-600);
 }
-.desc, .aside {
-  font-family: var(--serif); font-size: max(11px, 1.08cqw);
-  font-weight: 400; line-height: 1.45; color: #c8bdae;
-}
-.desc { padding-inline-start: max(7px, .72cqw); border-inline-start: 1px solid #655039; }
-.desc:empty { display: none; }
-.aside { margin-inline-start: auto; }
+.chip.os { background: rgba(69, 26, 3, .7); color: var(--amber-200); border-color: rgba(245, 158, 11, .6); font-style: italic; }
+.chip.narr { background: var(--stone-900); color: var(--stone-200); border-color: rgba(68, 64, 60, .8); }
+.chip.answer { background: var(--seal); color: #fbeee0; border-color: #e0574d; }
+.desc { font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: .8cqw; color: var(--stone-400); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.aside { flex: none; font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: .78cqw; color: var(--stone-400); display: flex; align-items: center; gap: .3cqw; }
 .aside.pulse { animation: pulse 1.8s ease-in-out infinite; }
-@keyframes pulse { 50% { opacity: .72; } }
+@keyframes pulse { 50% { opacity: .35; } }
 .line { margin: 0; min-height: 4.4cqw; font-size: max(12px, 1.36cqw); line-height: 1.68; letter-spacing: .06em; color: var(--stone-100); }
 .line em { font-style: normal; font-weight: 700; color: var(--amber-300); }
 .line .caret { display: inline-block; width: .1cqw; height: 1.2em; margin-left: .15cqw; vertical-align: -.2em; background: var(--amber-300); animation: blink 1s steps(1) infinite; }
